@@ -1,9 +1,4 @@
----
-title: "CAP Data Model"
-output:
-  html_document:
-    df_print: paged
----
+# CAP Data Model
 
 ## Assumptions and Aims
 There are some basic architectural assumptions that we make:
@@ -155,7 +150,7 @@ We need to identify a granualrity of annotation information that will be managed
 
 ### Overview of the data model
 
-![](data_model_diagram1.png)
+![](model.png)
 
 ### Version control and repository breakdown
 Regardless of the internal representation in CAP, it is clear that managing annotations through a version control system like git will be critical. In essense, CAP will have a git view to it. Considering the 'granularity' argument above, the proposal is to map the data structure onto git repositories in the following way:
