@@ -1,4 +1,4 @@
-<dataset id='human_dataset_2'>
+<dataset name='human_dataset_2'>
 
   <mapping confidence='0.3'> 
     <label name='Inh L2 PAX6 FREM2'>

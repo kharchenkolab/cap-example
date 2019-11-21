@@ -1,4 +1,6 @@
-<dataset id='mouse_dataset_1'>
+<dataset id='11d37d22-0cb0-11ea-8d71-362b9e155667' idType='CAP'>
+  <!-- note that above, we could've specified the dataset by name instead, 
+       as long as it was defined in the datasetDescription block in datasets.xml -->
 
   <mapping confidence='0.8'> 
     <label name='Inh L2 PAX6 FREM2'>
