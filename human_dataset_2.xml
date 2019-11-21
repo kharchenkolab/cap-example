@@ -1,0 +1,19 @@
+<dataset id='human_dataset_2'>
+
+  <mapping confidence='0.3'> 
+    <label name='Inh L2 PAX6 FREM2'>
+      <parent name='Inh L2 PAX6'/>
+    </label>
+    <cells>CAAGGACTGTTCAG,TACTTGACTCCTCG,TACGGAACGCGTTA,TAAAGACTCAGGAG,CCAATGGAACAGCT,TCACCTCTTCCAAG</cells>
+    <method type='manual'/>
+    <evidence type='markers'>FREM2+,PAX6+</evidence>
+  </mapping>
+
+  <mapping confidence='0.7'> 
+    <label name='~Inh L2 PAX6 FREM2'>
+      <parent name='Inh L2 PAX6'/>
+    </label>
+    <cells>CGTACCACACACAC,AAACATTGATCAGC,GTAAGCTGGTACCA,TGAGGTACGAACCT,GATTGGTGTGTCAG,ATTCAAGAACGGGA,GATTGGACTTTCGT,CACAGATGGGATTC</cells>
+  </mapping>  
+
+</dataset>

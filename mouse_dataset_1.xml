@@ -1,0 +1,21 @@
+<dataset id='mouse_dataset_1'>
+
+  <mapping confidence='0.8'> 
+    <label name='Inh L2 PAX6 FREM2'>
+      <parent name='Inh L2 PAX6'/>
+    </label>
+    <cells>ACTCAGGACTGAAC,AAGCCATGCGTGAT,TAAGCGTGTGCTCC,TGTAGGTGCGAGAG,GAACAGCTCTCAGA,CCAAGAACCCAATG,GCCTCAACCATGGT,AACGCATGACCCAA,TCGTAGGATCGACA,CGGCCAGAAAGGTA</cells>
+    <method type='manual'/>
+    <evidence type='markers'>FREM2+,PAX6+</evidence>
+  </mapping>
+
+  <mapping confidence='0.9'> 
+    <label name='Inh L2−5 PVALB RPH3AL'>
+      <parent name='Inh L2−5 PVALB'/>
+    </label>
+    <cells>CATTGTACTCGATG,ATATGCCTAGATCC,GCTATACTCTCTTA,GTAGCTGAATTCGG,CGAGATTGGACACT,TTAGTCTGTGCACA</cells>
+    <method type='manual'/>
+    <evidence type='markers'>PVALB+,RPH3AL+</evidence>
+  </mapping>  
+
+</dataset>
