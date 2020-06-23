@@ -16,7 +16,7 @@ In designing CAP and data structure in particular, there are some specific aims 
 
 ## Data Model
 The proposed data model is presented as a document structure within a version control repository. This can be easily translated into a relational or object database model. The model is presented in steps, starting with the simplest element, building up to the entire structure.
-.
+
 Below is a minimal annotation data block, that associates a simple text label with a list of cells in a single dataset:
 ```{xml}
 <dataset id='InternalDatasetId'>
