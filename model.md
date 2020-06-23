@@ -15,7 +15,7 @@ In designing CAP and data structure in particular, there are some specific aims 
 4. CAP should be usable through both rich UIs as well as programmatic access.
 
 ## Data Model
-The proposed data model is presented as a document structure within a version control repository. This can be easily translated into a relational or object database model. The model is presented in steps, starting with a simplest element, building up to the entire structure.
+The proposed data model is presented as a document structure within a version control repository. This can be easily translated into a relational or object database model. The model is presented in steps, starting with the simplest element, building up to the entire structure.
 .
 Below is a minimal annotation data block, that associates a simple text label with a list of cells in a single dataset:
 ```{xml}
@@ -27,16 +27,16 @@ Below is a minimal annotation data block, that associates a simple text label wi
 </dataset>
 ```
 
-The example above is minimal. There are quite a bit of additional information that we would like to get, and while the UIs will encourage such input, more detailed elements described below will be essentially optional (or set to default values).
+The example above is minimal. There is quite a bit of additional information that we would like to get, and while the UIs will encourage such input, more detailed elements described below will be essentially optional (or set to default values).
 
 ### Annotation element
-The annotation itself recrods an action of assigning label to some data feature. By default it will be a subpopulation. Down the road, however, we will need to accomodate annotations of other features, such as gradients or trajectories. For the sake of future caompatibility, it may be best to keep the entities on the biological rather than technical side. So the proposed annotation types are: `type|state|process`:
+The annotation itself records an action of assigning a label to some data feature. By default it will be a subpopulation. Down the road, however, we will need to accommodate annotations of other features, such as gradients or trajectories. For the sake of future compatibility, it may be best to keep the entities on the biological rather than technical side. So the proposed annotation types are: `type|state|process`:
 ```{xml}
 <mapping type='state'> <label name='S phase'/> ... </mapping>
 ```
 
 ### Label element
-Labels will have synonyms, including official IDs (e.g. ontology term ID), as well as relationships between eachother. We would like to capture this information whenever possible.
+Labels will have synonyms, including official IDs (e.g. ontology term ID), as well as relationships between each other. We would like to capture this information whenever possible.
 ```{xml}
 <label name='T cell'>
   <synonym name='T lymphocyte'/>
@@ -65,7 +65,7 @@ It may also be useful to introduce an overall confidence element for the entire 
 </mapping>
 ```
 
-In the case of pseudotime or gradient annotation, the position of the cells within the pseudotime can also be captured by such mapping value property (in that case, it will be a required property). In this case, the `confidence` mapping can be used to represent the distance or strenght of association of the cell with a given pseudotime point:
+In the case of pseudotime or gradient annotation, the position of the cells within the pseudotime can also be captured by such mapping value property (in that case, it will be a required property). In this case, the `confidence` mapping can be used to represent the distance or strength of association of the cell with a given pseudotime point:
 ```{xml}
 <mapping type='process'>
   <label name='T cell activation'/>
@@ -76,7 +76,7 @@ In the case of pseudotime or gradient annotation, the position of the cells with
 ```
 
 ### Evidence
-If provided, we would like to keep track of the basis for why the label was assigned. It is hard to envision a simple structure that woudl capture a potentially diverse set of structured and verbal explanations. At the base level, the investigator should be able to provide some text. It will be mostly useful to them, but we can probably mine gene IDs from it, and perhaps even some relationships and publications. We can add specfici evidence types, such a reference to a publication, marker genes, etc. but I suspect we will only be able to get such detailed info in a handful of cases.
+If provided, we would like to keep track of the basis for why the label was assigned. It is hard to envision a simple structure that would capture a potentially diverse set of structured and verbal explanations. At the base level, the investigator should be able to provide some text. It will be mostly useful to them, but we can probably mine gene IDs from it, and perhaps even some relationships and publications. We can add specific evidence types, such a reference to a publication, marker genes, etc. but I suspect we will only be able to get such detailed info in a handful of cases.
 ```{xml}
 <mapping>
   <label name='T cell'/>
@@ -126,7 +126,7 @@ Whenever a new dataset is 'registered', somewhere in the database a more detaile
 - The hashcodes will be automatically generated robust fingerprints to recognize private (unregistered) datasets being annotated by different users.
 
 ## Overall structure and version control
-We need to identify a granualrity of annotation information that will be managed in a coordinated manner. This level will be suitable for citable accession numbers (and, I argue, should bear the critical `annotation` element name). The proposal is that a citable annotation may include annotations for one or more datasets:
+We need to identify a granularity of annotation information that will be managed in a coordinated manner. This level will be suitable for citable accession numbers (and, I argue, should bear the critical `annotation` element name). The proposal is that a citable annotation may include annotations for one or more datasets:
 
 ```{xml}
 <annotation name='ABI neuronal hierarchy'>
@@ -153,7 +153,7 @@ We need to identify a granualrity of annotation information that will be managed
 ![](model.png)
 
 ### Version control and repository breakdown
-Regardless of the internal representation in CAP, it is clear that managing annotations through a version control system like git will be critical. In essense, CAP will have a git view to it. Considering the 'granularity' argument above, the proposal is to map the data structure onto git repositories in the following way:
+Regardless of the internal representation in CAP, it is clear that managing annotations through a version control system like git will be critical. In essence, CAP will have a git view to it. Considering the 'granularity' argument above, the proposal is to map the data structure onto git repositories in the following way:
 
 1. An `<annotation/>` element corresponds to a git repository.
 2. The repository contains a set of XML files, each describing mappings for a single dataset.
